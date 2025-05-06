@@ -1,0 +1,13 @@
+.card {
+  display: block;
+}
+
+.card-img-container {
+  display: block;
+}
+
+.card-img {
+  display: block;
+  width: 35rem;
+  height: 15rem;
+}
