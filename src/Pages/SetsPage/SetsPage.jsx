@@ -1,6 +1,6 @@
 import "./SetsPage.css";
-import BackButton from "../BackButton/BackButton.jsx";
-import SetsComponent from "../SetsComponent/SetsComponent.jsx";
+import BackButton from "../../Components/BackButton/BackButton.jsx";
+import SetsComponent from "../../Components/SetsComponent/SetsComponent.jsx";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 

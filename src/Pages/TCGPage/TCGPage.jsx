@@ -1,4 +1,4 @@
-import TCGComponent from "../TCGComponent/TCGComponent";
+import TCGComponent from "../../Components/TCGComponent/TCGComponent";
 import "./TCGPage.css";
 
 function TCGPage() {

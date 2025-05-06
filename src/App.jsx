@@ -1,9 +1,9 @@
 import "./App.css";
 import { Route, Routes } from "react-router";
-import Layout from "./Layout/Layout";
-import Home from "./Home/Home";
-import TCGPage from "./TCGPage/TCGPage";
-import SetsPage from "./SetsPage/SetsPage";
+import Layout from "./Pages/Layout/Layout";
+import Home from "./Pages/Home/Home";
+import TCGPage from "./Pages/TCGPage/TCGPage";
+import SetsPage from "./Pages/SetsPage/SetsPage";
 
 function App() {
   return (
