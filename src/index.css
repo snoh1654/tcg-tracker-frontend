@@ -30,6 +30,10 @@ h1 {
   line-height: 1.1;
 }
 
+.card {
+  display: block;
+}
+
 .button {
   display: block;
   width: fit-content;
@@ -47,10 +51,12 @@ h1 {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 .button:hover {
   color: #1a1a1a;
   background-color: darkgrey;
 }
+
 .button:focus,
 .button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;

@@ -1,0 +1,18 @@
+.set-card {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  transition: border-color 0.25s;
+}
+.set-card:hover {
+  background-color: darkgrey;
+}
+
+.set-name {
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.set-card:hover .set-name {
+  color: #1a1a1a;
+}
