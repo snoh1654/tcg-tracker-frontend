@@ -27,8 +27,8 @@
   background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  position: relative;
+  justify-content: start;
+  min-height: 100%;
 }
 
 .layout-footer {

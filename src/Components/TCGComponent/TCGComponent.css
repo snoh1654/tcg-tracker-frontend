@@ -1,8 +1,8 @@
-.card-img-container {
+.tcg-img-container {
   display: block;
 }
 
-.card-img {
+.tcg-img {
   display: block;
   width: 35rem;
   height: 15rem;

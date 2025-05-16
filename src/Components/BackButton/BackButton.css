@@ -3,9 +3,6 @@
   border: none;
   width: fit-content;
   font-size: 3vw;
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
 }
 
 .back-button:hover {
