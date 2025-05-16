@@ -1,0 +1,26 @@
+.card-card {
+  padding: 1rem;
+}
+.card-card:hover {
+  opacity: 0.5;
+}
+
+.card-name,
+.card-price {
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0.5rem;
+}
+
+.card-price {
+  margin-bottom: 0;
+}
+
+.card-card:hover .card-name,
+.card-card:hover .card-price {
+  color: #1a1a1a;
+}
+
+.card-img {
+  width: 50%;
+}
