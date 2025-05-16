@@ -1,6 +1,6 @@
 import "./SetsPage.css";
 import BackButton from "../../Components/BackButton/BackButton.jsx";
-import SetsComponent from "../../Components/SetsComponent/SetsComponent.jsx";
+import SetsComponent from "../../Components/SetComponent/SetComponent.jsx";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
@@ -10,30 +10,22 @@ function SetsPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(
-        "https://phedr164bh.execute-api.us-west-2.amazonaws.com/sets/" +
-          tcg_name
-      );
+      const res = await fetch(url);
       const json = await res.json();
-      console.log(json);
       setSets(json);
     };
 
+    const url = import.meta.env.VITE_API_URL + "sets/" + tcg_name;
     fetchData();
   }, []);
 
-  // useEffect();
-  // makes API call to DB, use react query to check if its already there. If not, store it after call
-  // card component for each set, takes all info retrived from set
-
-  // configure tcg component design
   return (
     <>
       <BackButton></BackButton>
 
       <div className="sets-container">
-        {sets.map((item, i) => (
-          <SetsComponent key={i} name={item.set_name} />
+        {sets.map((item) => (
+          <SetsComponent key={item.set_name} name={item.set_name} />
         ))}
       </div>
     </>
