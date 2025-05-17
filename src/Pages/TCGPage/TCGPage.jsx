@@ -3,8 +3,6 @@ import "./TCGPage.css";
 import { useState } from "react";
 
 function TCGPage() {
-  dateRange, (setDateRange = useState([]));
-
   return (
     <>
       <div className="tcg-container">

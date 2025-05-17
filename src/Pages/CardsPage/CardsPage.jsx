@@ -1,23 +1,18 @@
 import "./CardsPage.css";
 import BackButton from "../../Components/BackButton/BackButton.jsx";
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CardComponent from "../../Components/CardComponent/CardComponent.jsx";
+import { useQuery } from "@tanstack/react-query";
 
 function CardsPage() {
-  const [cards, setCards] = useState([]);
   const { tcg_name, set_name } = useParams();
+  const url = import.meta.env.VITE_API_URL + "cards/" + set_name;
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch(url);
-      const json = await res.json();
-      setCards(json);
-    };
-
-    const url = import.meta.env.VITE_API_URL + "cards/" + set_name;
-    fetchData();
-  }, []);
+  const { data: cards = [] } = useQuery({
+    queryKey: ["cards", tcg_name, set_name],
+    queryFn: () => fetch(url).then((res) => res.json()),
+    staleTime: 30 * 60 * 1000, // 30 minutes
+  });
 
   return (
     <>
