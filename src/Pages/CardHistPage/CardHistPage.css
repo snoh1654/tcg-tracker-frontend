@@ -2,6 +2,7 @@
   margin: auto 1rem;
   display: flex;
   flex-direction: row;
+  gap: 2.5rem;
   justify-content: space-between;
 }
 
@@ -33,16 +34,16 @@
 
 .hist-button {
   color: white;
-  background-color: blue;
+  background-color: #5953cb;
   border: none;
-  border-radius: 15%;
+  border-radius: 15px;
   width: 10%;
   height: 2rem;
 }
 
 .hist-button:hover {
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 [disabled].hist-button {
@@ -51,4 +52,8 @@
 
 [disabled].hist-button:hover {
   cursor: default;
+}
+
+.hist-button.active {
+  background-color: #282557;
 }
