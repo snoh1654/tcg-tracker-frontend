@@ -14,6 +14,16 @@ function CardsPage() {
     staleTime: 30 * 60 * 1000, // 30 minutes
   });
 
+  cards.sort((a, b) => {
+    const priceA = parseFloat(a.price);
+    const priceB = parseFloat(b.price);
+
+    if (isNaN(priceA)) return 1;
+    if (isNaN(priceB)) return -1;
+
+    return priceB - priceA;
+  });
+
   return (
     <>
       <BackButton></BackButton>
