@@ -33,6 +33,7 @@ function CardsPage() {
               ".jpg"
             }
             price={item.price}
+            card={item}
           />
         ))}
       </div>
