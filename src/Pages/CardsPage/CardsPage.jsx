@@ -6,7 +6,8 @@ import { useQuery } from "@tanstack/react-query";
 
 function CardsPage() {
   const { tcg_name, set_name } = useParams();
-  const url = import.meta.env.VITE_API_URL + "cards/" + set_name;
+  const url =
+    import.meta.env.VITE_API_URL + "cards/" + encodeURIComponent(set_name);
 
   const { data: cards = [] } = useQuery({
     queryKey: ["cards", tcg_name, set_name],
@@ -15,8 +16,8 @@ function CardsPage() {
   });
 
   cards.sort((a, b) => {
-    const priceA = parseFloat(a.price);
-    const priceB = parseFloat(b.price);
+    const priceA = parseFloat(a.price.replace(",", ""));
+    const priceB = parseFloat(b.price.replace(",", ""));
 
     if (isNaN(priceA)) return 1;
     if (isNaN(priceB)) return -1;
@@ -32,14 +33,14 @@ function CardsPage() {
         {cards.map((item) => (
           <CardComponent
             key={item.card_id}
-            name={item.name}
+            name={encodeURIComponent(item.name)}
             imageSrc={
               import.meta.env.VITE_CLOUDFRONT_URL +
-              tcg_name +
+              encodeURIComponent(tcg_name) +
               "/" +
-              set_name +
+              encodeURIComponent(set_name) +
               "/" +
-              item.card_id +
+              encodeURIComponent(item.card_id) +
               ".jpg"
             }
             price={item.price}

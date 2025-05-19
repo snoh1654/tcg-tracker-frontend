@@ -6,7 +6,8 @@ import { useQuery } from "@tanstack/react-query";
 
 function SetsPage() {
   const { tcg_name } = useParams();
-  const url = import.meta.env.VITE_API_URL + "sets/" + tcg_name;
+  const url =
+    import.meta.env.VITE_API_URL + "sets/" + encodeURIComponent(tcg_name);
 
   const { data: sets = [] } = useQuery({
     queryKey: ["sets", tcg_name],

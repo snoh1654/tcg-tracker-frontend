@@ -13,15 +13,22 @@ const activeButtonType = {
 
 function CardHistPage() {
   const [cardHist, setCardHist] = useState([]);
-  const { tcg_name, set_name, card_id } = useParams();
-  const url = import.meta.env.VITE_API_URL + "card/" + set_name + "/" + card_id;
+  let { tcg_name, set_name, card_id } = useParams();
+
+  const url =
+    import.meta.env.VITE_API_URL +
+    "card/" +
+    encodeURIComponent(set_name) +
+    "?card-id=" +
+    encodeURIComponent(card_id);
+
   const imageSrc =
     import.meta.env.VITE_CLOUDFRONT_URL +
-    tcg_name +
+    encodeURIComponent(tcg_name) +
     "/" +
-    set_name +
+    encodeURIComponent(set_name) +
     "/" +
-    card_id +
+    encodeURIComponent(card_id) +
     ".jpg";
   const activeButton = useRef("2W");
 
@@ -41,7 +48,7 @@ function CardHistPage() {
 
   async function updatePriceHistory(buttonType) {
     let days_since_present = activeButtonType[buttonType];
-    let fetchURL = url + `?start_date=${days_since_present}`;
+    let fetchURL = url + `&start_date=${days_since_present}`;
     activeButton.current = buttonType;
     fetchCardHist(fetchURL);
   }
