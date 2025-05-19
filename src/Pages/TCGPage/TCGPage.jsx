@@ -1,6 +1,5 @@
 import TCGComponent from "../../Components/TCGComponent/TCGComponent";
 import "./TCGPage.css";
-import { useState } from "react";
 
 function TCGPage() {
   return (

@@ -1,5 +1,5 @@
 import "./BackButton.css";
-import { useNavigate, Link } from "react-router";
+import { useNavigate } from "react-router";
 
 function SetsPage() {
   const navigate = useNavigate();
