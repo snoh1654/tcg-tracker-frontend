@@ -1,12 +1,66 @@
-# React + Vite
+# TCG Price Tracker – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Site: [tcg-tracker.netlify.app](https://tcg-tracker.netlify.app)
 
-Currently, two official plugins are available:
+This is the frontend of the TCG Price Tracker web app. It displays daily-updated trading card prices from multiple TCGs and visualizes the price history of individual cards using interactive charts. Data is retrieved from a custom AWS-powered backend that scrapes and stores card pricing information.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 📈 View historical price trends for individual cards
+- 🔁 Select time ranges: Last 2 Weeks, 3 Months, 1 Year, or All Time
+- 📦 Browse all cards within a TCG set
+- 🃏 Supports multiple popular TCGs
+- 📊 Interactive charts rendered with Recharts
+- ⚡ Optimized performance with:
+  - React Query API caching (preserved across site navigation)
+  - CloudFront CDN image delivery for faster loading
+
+---
+
+## Performance & Optimization
+
+This project emphasizes production-ready practices for speed and efficiency:
+
+- 🧠 **React Query** caches API results for 30 minutes, allowing seamless navigation without re-fetching data.
+- 🌎 **AWS CloudFront** is used to deliver card images via CDN, significantly improving image load speed and reducing direct S3 access.
+
+---
+
+## Tech Stack
+
+- **React** (Vite)
+- **React Router** – Routing between pages
+- **Recharts** – Charting library for price visualization
+- **React Query** – Caches API responses for 30 minutes, reducing load times and improving UX
+- **AWS CloudFront** – Serves card images via CDN to offload traffic from S3 and lower latency
+- **CSS** – Modular styling
+- **fetch API** – Used for calling AWS API Gateway endpoints
+
+---
+
+## Screenshots
+
+### Set Page – View all cards in a set
+
+![Set Page](./public/sets-page.png)
+
+### Card Page – Price history of a single card
+
+![Card Page](./public/card-page.png)
+
+---
+
+## Backend
+
+This frontend relies on a separate backend that scrapes and serves TCG card pricing data.  
+You can find the backend source code and architecture documentation here:  
+➡️ [tcg-tracker-aws](https://github.com/snoh1654/tcg-tracker-aws)
+
+---
+
+## Author
+
+**Sean Noh**  
+GitHub: [@snoh1654](https://github.com/snoh1654)
