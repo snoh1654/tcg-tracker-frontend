@@ -5,7 +5,7 @@ function SetsComponent({ name }) {
   return (
     <>
       <div className="card set-card">
-        <Link to={name} className="card-link">
+        <Link to={encodeURIComponent(name)} className="card-link">
           <p className="set-name">{name}</p>
         </Link>
       </div>

@@ -2,14 +2,14 @@
   margin: auto 1rem;
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 2.5rem;
+  justify-content: space-between;
 }
 
 .card-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 25%;
 }
 
 .card-name {
@@ -18,4 +18,42 @@
 
 .side-card-img {
   display: block;
+}
+
+.card-data {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hist-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.hist-button {
+  color: white;
+  background-color: #5953cb;
+  border: none;
+  border-radius: 15px;
+  width: 10%;
+  height: 2rem;
+}
+
+.hist-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+[disabled].hist-button {
+  opacity: 0.2;
+}
+
+[disabled].hist-button:hover {
+  cursor: default;
+}
+
+.hist-button.active {
+  background-color: #282557;
 }

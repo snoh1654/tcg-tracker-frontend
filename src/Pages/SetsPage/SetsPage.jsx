@@ -1,23 +1,19 @@
 import "./SetsPage.css";
 import BackButton from "../../Components/BackButton/BackButton.jsx";
 import SetsComponent from "../../Components/SetComponent/SetComponent.jsx";
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 
 function SetsPage() {
-  const [sets, setSets] = useState([]);
   const { tcg_name } = useParams();
+  const url =
+    import.meta.env.VITE_API_URL + "sets/" + encodeURIComponent(tcg_name);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch(url);
-      const json = await res.json();
-      setSets(json);
-    };
-
-    const url = import.meta.env.VITE_API_URL + "sets/" + tcg_name;
-    fetchData();
-  }, []);
+  const { data: sets = [] } = useQuery({
+    queryKey: ["sets", tcg_name],
+    queryFn: () => fetch(url).then((res) => res.json()),
+    staleTime: 30 * 60 * 1000, // 30 minutes
+  });
 
   return (
     <>
