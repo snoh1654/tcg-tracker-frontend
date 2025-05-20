@@ -2,7 +2,7 @@
 
 Live Site: [tcg-tracker.netlify.app](https://tcg-tracker.netlify.app)
 
-This is the frontend of the TCG Price Tracker web app. It displays daily-updated trading card prices from multiple TCGs and visualizes the price history of individual cards using interactive charts. Data is retrieved from a custom AWS-powered backend that scrapes and stores card pricing information.
+This is the frontend of the TCG Price Tracker web app. It displays daily-updated trading card prices from multiple TCGs and visualizes the price history of individual cards using interactive charts. Data is retrieved from a custom AWS-powered backend that continuously scrapes and stores card pricing information.
 
 ---
 
