@@ -10,8 +10,12 @@ function Home() {
         <h2>Welcome to TCG Tracker</h2>
         <p>Start exploring price history of TCG cards!</p>
         <p>
-          There are updates twice per day to ensure that you are seeing the
-          latest information!
+          The TCG Tracker web app visualizes the price history for daily-updated
+          trading card prices from multiple TCGs.
+        </p>
+        <p>
+          Data is retrieved from a custom AWS-powered backend that performs
+          periodic scrapes and stores card pricing information and metadata.
         </p>
       </div>
       <Link to="cards" className="button">
