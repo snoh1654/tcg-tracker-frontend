@@ -38,11 +38,11 @@ function Home() {
           <a
             href="https://github.com/snoh1654/tcg-tracker-aws"
             className="github-link"
+            target="_blank"
           >
             <FontAwesomeIcon
               icon={faGithub}
               className="github-icon"
-              target="_blank"
             ></FontAwesomeIcon>
           </a>
         </div>
