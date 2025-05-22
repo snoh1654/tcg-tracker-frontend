@@ -1,12 +1,8 @@
 .tcg-container {
-  margin-left: 5vw;
-  margin-right: 5vw;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: auto;
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  gap: 5rem;
 }

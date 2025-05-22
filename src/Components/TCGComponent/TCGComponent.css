@@ -4,6 +4,12 @@
 
 .tcg-img {
   display: block;
-  width: 35rem;
-  height: 15rem;
+  width: 500px;
+  height: 195px;
+  /* max-height: 200px; */
+}
+
+.tcg-card:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
 }
